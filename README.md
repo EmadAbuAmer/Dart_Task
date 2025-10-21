@@ -1,91 +1,184 @@
 # 🚗 Vehicle Management System
 
-A comprehensive Dart-based Object-Oriented Programming (OOP) system for managing different types of vehicles with full CRUD operations, search functionality, and data persistence.
+<div align="center">
+
+![Dart](https://img.shields.io/badge/Dart-3.7.0-blue?style=for-the-badge&logo=dart)
+![OOP](https://img.shields.io/badge/OOP-Design-green?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+
+A comprehensive Dart-based Object-Oriented Programming system for managing different types of vehicles with full CRUD operations, search functionality, and data persistence.
+
+[📖 Documentation](#-overview) • [🚀 Getting Started](#-installation--usage) • [💡 Examples](#-examples)
+
+</div>
 
 ## 📋 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Class Hierarchy](#class-hierarchy)
-- [Installation & Usage](#installation--usage)
-- [API Documentation](#api-documentation)
-- [OOP Principles](#oop-principles)
-- [Examples](#examples)
-- [Contributing](#contributing)
+<nav>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#project-structure">Project Structure</a></li>
+    <li><a href="#class-hierarchy">Class Hierarchy</a></li>
+    <li><a href="#installation--usage">Installation & Usage</a></li>
+    <li><a href="#api-documentation">API Documentation</a></li>
+    <li><a href="#oop-principles">OOP Principles</a></li>
+    <li><a href="#examples">Examples</a></li>
+    <li><a href="#data-persistence">Data Persistence</a></li>
+    <li><a href="#development">Development</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#authors">Authors</a></li>
+  </ul>
+</nav>
 
 ## 🌟 Overview
 
 This project implements a complete vehicle management system using Dart's Object-Oriented Programming features. It demonstrates inheritance, encapsulation, polymorphism, and data persistence through a hierarchical class structure for different vehicle types.
 
+<div align="center">
+  <img src="https://via.placeholder.com/800x400/2D3748/FFFFFF?text=Vehicle+Management+System" alt="System Architecture" width="600"/>
+</div>
+
 ## ✨ Features
 
-- **🏗️ Complete OOP Implementation** - Inheritance, encapsulation, polymorphism
-- **🚘 Multiple Vehicle Types** - Cars, Motorcycles, Trucks
-- **🔍 Advanced Search** - By manufacturer, date, plate number
-- **💾 Data Persistence** - JSON serialization/deserialization
-- **🛠️ CRUD Operations** - Create, Read, Update, Delete vehicles
-- **📱 Console Interface** - Easy-to-use command-line interface
+<table>
+  <tr>
+    <td align="center">
+      <strong>🏗️ OOP Implementation</strong><br>
+      Inheritance, encapsulation, polymorphism
+    </td>
+    <td align="center">
+      <strong>🚘 Multiple Vehicle Types</strong><br>
+      Cars, Motorcycles, Trucks
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>🔍 Advanced Search</strong><br>
+      By manufacturer, date, plate number
+    </td>
+    <td align="center">
+      <strong>💾 Data Persistence</strong><br>
+      JSON serialization/deserialization
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>🛠️ CRUD Operations</strong><br>
+      Create, Read, Update, Delete
+    </td>
+    <td align="center">
+      <strong>📱 Console Interface</strong><br>
+      Easy-to-use command-line interface
+    </td>
+  </tr>
+</table>
 
 ## 📁 Project Structure
 
-```
+```bash
 dart_tool/
-├── bin/                    # Executable directory
-├── lib/                    # Library directory
+├── bin/                           # Executable directory
+├── lib/                           # Library directory
 │   ├── util/
-│   │   ├── Enums.dart
-│   ├── classes/            # All class definitions
-│   │   ├── Engine.dart
-│   │   ├── Automobile.dart
-│   │   ├── Vehicle.dart
-│   │   ├── Motorcycle.dart
-│   │   ├── Car.dart
-│   │   ├── Truck.dart
-│   ├── VehicleManagementSystem.dart # manager logic
-│   └── task_1.dart         # Main application file
+│   │   ├── Enums.dart            # FuelType and GearType enumerations
+│   ├── classes/                   # All class definitions
+│   │   ├── Engine.dart           # Core engine component
+│   │   ├── Automobile.dart       # Base class for all vehicles
+│   │   ├── Vehicle.dart          # Intermediate class for land vehicles
+│   │   ├── Motorcycle.dart       # Motorcycle-specific implementation
+│   │   ├── Car.dart              # Car-specific implementation
+│   │   ├── Truck.dart            # Truck-specific implementation
+│   ├── VehicleManagementSystem.dart # Main management logic
+│   └── task_1.dart               # Application entry point
 ```
 
 ### File Descriptions
 
-- **`Enums.dart`** - Defines `FuelType` and `GearType` enumerations
-- **`Engine.dart`** - Core engine component with specifications
-- **`Automobile.dart`** - Base class for all vehicles
-- **`Vehicle.dart`** - Intermediate class for land vehicles
-- **`Motorcycle.dart`** - Motorcycle-specific implementation
-- **`Car.dart`** - Car-specific implementation  
-- **`Truck.dart`** - Truck-specific implementation
-- **`VehicleManagementSystem.dart`** - Main management logic and operations
-- **`task_1.dart`** - Application entry point and testing
+| File | Description |
+|------|-------------|
+| **`Enums.dart`** | Defines `FuelType` and `GearType` enumerations |
+| **`Engine.dart`** | Core engine component with specifications |
+| **`Automobile.dart`** | Base class for all vehicles |
+| **`Vehicle.dart`** | Intermediate class for land vehicles |
+| **`Motorcycle.dart`** | Motorcycle-specific implementation |
+| **`Car.dart`** | Car-specific implementation |
+| **`Truck.dart`** | Truck-specific implementation |
+| **`VehicleManagementSystem.dart`** | Main management logic and operations |
+| **`task_1.dart`** | Application entry point and testing |
 
 ## 🏗️ Class Hierarchy
 
+<div align="center">
 
-Automobile (Base Class)
-├── Motorcycle
-└── Vehicle (Intermediate Class)
-    ├── Car
-    └── Truck
+```mermaid
+graph TD
+    A[Automobile] --> B[Motorcycle]
+    A --> C[Vehicle]
+    C --> D[Car]
+    C --> E[Truck]
+    
+    style A fill:#4CAF50
+    style B fill:#2196F3
+    style C fill:#FF9800
+    style D fill:#F44336
+    style E fill:#9C27B0
 ```
+
+</div>
 
 ### Class Relationships
 
-| Class | Parent | Key Properties |
-|-------|--------|----------------|
-| **Engine** | - | manufacturer, capacity, fuelType |
-| **Automobile** | - | company, model, engine, plateNumber |
-| **Motorcycle** | Automobile | tierDiameter, length |
-| **Vehicle** | Automobile | length, width, color |
-| **Car** | Vehicle | chairNumber, isFurnitureLeather |
-| **Truck** | Vehicle | freeWeight, fullWeight |
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Parent</th>
+      <th>Key Properties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Engine</strong></td>
+      <td>-</td>
+      <td>manufacturer, capacity, fuelType</td>
+    </tr>
+    <tr>
+      <td><strong>Automobile</strong></td>
+      <td>-</td>
+      <td>company, model, engine, plateNumber</td>
+    </tr>
+    <tr>
+      <td><strong>Motorcycle</strong></td>
+      <td>Automobile</td>
+      <td>tierDiameter, length</td>
+    </tr>
+    <tr>
+      <td><strong>Vehicle</strong></td>
+      <td>Automobile</td>
+      <td>length, width, color</td>
+    </tr>
+    <tr>
+      <td><strong>Car</strong></td>
+      <td>Vehicle</td>
+      <td>chairNumber, isFurnitureLeather</td>
+    </tr>
+    <tr>
+      <td><strong>Truck</strong></td>
+      <td>Vehicle</td>
+      <td>freeWeight, fullWeight</td>
+    </tr>
+  </tbody>
+</table>
 
 ## 🚀 Installation & Usage
 
 ### Prerequisites
-- Dart SDK version: (3.7.0)
-- Git
+- **Dart SDK**: Version 3.7.0 or higher
+- **Git**: For version control
 
 ### Installation
 
+```bash
 # Clone the repository
 git clone https://github.com/EmadAbuAmer/Dart_Task.git
 
@@ -97,6 +190,7 @@ dart run lib/task_1.dart
 ```
 
 ### Running Tests
+
 ```bash
 # Run the main application with sample data
 dart run lib/task_1.dart
@@ -143,39 +237,91 @@ vms.loadFromFile('vehicles.json');
 
 ### Key Methods
 
-| Method | Description | Parameters |
-|--------|-------------|------------|
-| `addVehicle()` | Add new vehicle | Vehicle object |
-| `searchByManufacturer()` | Search by company | String manufacturer |
-| `searchByPlateNumber()` | Search by plate | int plateNumber |
-| `saveToFile()` | Save to JSON | String filename |
-| `loadFromFile()` | Load from JSON | String filename |
-| `printAll()` | Display all vehicles | - |
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+      <th>Parameters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>addVehicle()</code></td>
+      <td>Add new vehicle</td>
+      <td>Vehicle object</td>
+    </tr>
+    <tr>
+      <td><code>searchByManufacturer()</code></td>
+      <td>Search by company</td>
+      <td>String manufacturer</td>
+    </tr>
+    <tr>
+      <td><code>searchByPlateNumber()</code></td>
+      <td>Search by plate</td>
+      <td>int plateNumber</td>
+    </tr>
+    <tr>
+      <td><code>saveToFile()</code></td>
+      <td>Save to JSON</td>
+      <td>String filename</td>
+    </tr>
+    <tr>
+      <td><code>loadFromFile()</code></td>
+      <td>Load from JSON</td>
+      <td>String filename</td>
+    </tr>
+    <tr>
+      <td><code>printAll()</code></td>
+      <td>Display all vehicles</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
 
 ## 🎯 OOP Principles Implemented
 
-### 1. **Encapsulation**
-- All fields are private (prefixed with `_`)
-- Controlled access via getter/setter methods
-- Data validation in setters
-
-### 2. **Inheritance**
-- Hierarchical class structure
-- Code reuse through parent classes
-- Method overriding in child classes
-
-### 3. **Polymorphism**
-- Overridden `toString()` methods
-- Custom JSON serialization per class
-- Unified interface for different vehicle types
-
-### 4. **Abstraction**
-- Clear separation between interface and implementation
-- Abstract common functionality in base classes
+<div class="principles-grid">
+  <div class="principle-card">
+    <h3>🔒 Encapsulation</h3>
+    <ul>
+      <li>All fields are private (prefixed with <code>_</code>)</li>
+      <li>Controlled access via getter/setter methods</li>
+      <li>Data validation in setters</li>
+    </ul>
+  </div>
+  
+  <div class="principle-card">
+    <h3>🧬 Inheritance</h3>
+    <ul>
+      <li>Hierarchical class structure</li>
+      <li>Code reuse through parent classes</li>
+      <li>Method overriding in child classes</li>
+    </ul>
+  </div>
+  
+  <div class="principle-card">
+    <h3>🔄 Polymorphism</h3>
+    <ul>
+      <li>Overridden <code>toString()</code> methods</li>
+      <li>Custom JSON serialization per class</li>
+      <li>Unified interface for different vehicle types</li>
+    </ul>
+  </div>
+  
+  <div class="principle-card">
+    <h3>📐 Abstraction</h3>
+    <ul>
+      <li>Clear separation between interface and implementation</li>
+      <li>Abstract common functionality in base classes</li>
+    </ul>
+  </div>
+</div>
 
 ## 💡 Examples
 
 ### Creating a Car
+
 ```dart
 final engine = Engine.parameterizedEngine(
   'BMW', 
@@ -203,6 +349,7 @@ final car = Car.parameterizedCar(
 ```
 
 ### Search Operations
+
 ```dart
 // Search by manufacturer
 vms.searchByManufacturer('BMW');
@@ -227,19 +374,21 @@ The system uses JSON serialization for data persistence:
 ```
 
 **Features:**
-- Automatic save/load functionality
-- Type-safe serialization/deserialization
-- Error handling for file operations
+- ✅ Automatic save/load functionality
+- ✅ Type-safe serialization/deserialization
+- ✅ Error handling for file operations
 
 ## 🛠️ Development
 
 ### Adding New Vehicle Types
-1. Create new class extending appropriate parent
-2. Implement required constructors
-3. Add JSON serialization methods
-4. Update VehicleManagementSystem if needed
+
+1. **Create new class** extending appropriate parent
+2. **Implement required constructors**
+3. **Add JSON serialization methods**
+4. **Update VehicleManagementSystem** if needed
 
 ### Code Style
+
 - Follow Dart style guide
 - Use meaningful variable names
 - Add comments for complex logic
@@ -247,15 +396,134 @@ The system uses JSON serialization for data persistence:
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+We welcome contributions! Please follow these steps:
 
-
+1. **Fork** the repository
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
+3. **Commit your changes** (`git commit -m 'Add amazing feature'`)
+4. **Push to the branch** (`git push origin feature/amazing-feature`)
+5. **Open a Pull Request**
 
 ## 👥 Authors
 
-- **Emad Daraghmeh** - (https://github.com/EmadAbuAmer)
+<div align="center">
 
+### **Emad Daraghmeh**
+
+[![GitHub](https://img.shields.io/badge/GitHub-EmadAbuAmer-black?style=for-the-badge&logo=github)](https://github.com/EmadAbuAmer)
+
+</div>
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you find it helpful!**
+
+*For questions or support, please open an issue in the GitHub repository.*
+
+</div>
+
+<style>
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.principle-card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.principle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.principle-card h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.principle-card ul {
+  padding-left: 20px;
+}
+
+.principle-card li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3498db;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid #3498db;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #3498db;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th {
+  background: #2c3e50;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+table tr:hover {
+  background: #e3f2fd;
+}
+
+code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+pre {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+</style>
