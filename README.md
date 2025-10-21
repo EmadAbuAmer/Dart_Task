@@ -29,16 +29,19 @@ A comprehensive Dart-based Object-Oriented Programming system for managing diffe
     <li><a href="#authors">Authors</a></li>
   </ul>
 </nav>
-
+<div id="overview">
 ## 🌟 Overview
-
+</div>
 This project implements a complete vehicle management system using Dart's Object-Oriented Programming features. It demonstrates inheritance, encapsulation, polymorphism, and data persistence through a hierarchical class structure for different vehicle types.
 
 <div align="center">
   <img src="https://via.placeholder.com/800x400/2D3748/FFFFFF?text=Vehicle+Management+System" alt="System Architecture" width="600"/>
 </div>
 
+
+<div id="features">
 ## ✨ Features
+</div>
 
 <table>
   <tr>
@@ -73,7 +76,10 @@ This project implements a complete vehicle management system using Dart's Object
   </tr>
 </table>
 
+<div id="project-structure">
 ## 📁 Project Structure
+</div>
+
 
 ```bash
 dart_tool/
