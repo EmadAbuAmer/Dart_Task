@@ -21,17 +21,13 @@ A comprehensive Dart-based Object-Oriented Programming system for managing diffe
     <li><a href="#class-hierarchy">Class Hierarchy</a></li>
     <li><a href="#installation--usage">Installation & Usage</a></li>
     <li><a href="#api-documentation">API Documentation</a></li>
-    <li><a href="#oop-principles">OOP Principles</a></li>
     <li><a href="#examples">Examples</a></li>
-    <li><a href="#data-persistence">Data Persistence</a></li>
-    <li><a href="#development">Development</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#authors">Authors</a></li>
   </ul>
 </nav>
 <div id="overview">
 ## 🌟 Overview
 </div>
+
 This project implements a complete vehicle management system using Dart's Object-Oriented Programming features. It demonstrates inheritance, encapsulation, polymorphism, and data persistence through a hierarchical class structure for different vehicle types.
 
 <div align="center">
@@ -112,7 +108,10 @@ dart_tool/
 | **`VehicleManagementSystem.dart`** | Main management logic and operations |
 | **`task_1.dart`** | Application entry point and testing |
 
+<div id="class_hirerachy">
 ## 🏗️ Class Hierarchy
+</div>
+
 
 <div align="center">
 
@@ -181,8 +180,10 @@ graph TD
 ### Prerequisites
 - **Dart SDK**: Version 3.7.0 or higher
 - **Git**: For version control
+<div id="installation--usage">
+### Installation  
+</div>
 
-### Installation
 
 ```bash
 # Clone the repository
@@ -205,8 +206,10 @@ dart run lib/task_1.dart
 dart compile exe lib/task_1.dart -o bin/vehicle_manager
 ./bin/vehicle_manager
 ```
-
+<div id="api-documentation">
 ## 📚 API Documentation
+</div>
+
 
 ### Core Classes
 
@@ -323,8 +326,10 @@ vms.loadFromFile('vehicles.json');
     </ul>
   </div>
 </div>
-
+<div id="examples">
 ## 💡 Examples
+</div>
+
 
 ### Creating a Car
 
